@@ -1,0 +1,26 @@
+ \begin{tikzpicture}
+
+  %color one half of a unit circle
+  \begin{scope}
+    \clip (0,0) circle (1cm);
+    \fill[lightgray] (0cm,1cm) rectangle (-1cm, -1cm);
+  \end{scope}
+
+
+  \fill[lightgray] (0,0.5) circle (0.5cm);
+  \fill[white] (0,-0.5) circle (0.5cm);
+
+  %fill eyes
+%  \fill[white] (0,0.5) circle (0.1cm);
+%  \fill[black] (0,-0.5) circle (0.1cm);
+
+  %outer line
+  \draw (0,0) circle (1cm);
+
+\node (A) at (0,0.5) {$\xi$} edge[loop left] (A);
+\node (B) at (0,-0.5) {$\Omega$} edge[loop right] (B);
+
+\draw[->, bend left] (A) to node [swap] {} (B);
+\draw[->, bend left] (B) to node  {} (A);
+\end{tikzpicture}
+
